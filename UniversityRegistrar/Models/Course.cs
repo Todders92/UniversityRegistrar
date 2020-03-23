@@ -7,12 +7,12 @@ namespace UniversityRegistrar.Models
     {
         public Course()
         {
-            this.Students = new HashSet<CourseStudent>();
+            this.Students = new HashSet<CourseDepartmentStudent>();
         }
 
         public int CourseId { get; set; }
         public string CourseName { get; set; }
         public string CourseNumber { get; set; }
-        public virtual ICollection<CourseStudent> Students { get; set; }
+        public virtual ICollection<CourseDepartmentStudent> Students { get; set; }
     }
 }
