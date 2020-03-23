@@ -21,7 +21,9 @@ namespace UniversityRegistrar.Migrations
                     b.Property<int>("CourseId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("CourseName");
+
+                    b.Property<string>("CourseNumber");
 
                     b.HasKey("CourseId");
 
@@ -50,6 +52,8 @@ namespace UniversityRegistrar.Migrations
                 {
                     b.Property<int>("StudentId")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("DateOfEnrollment");
 
                     b.Property<string>("Name");
 

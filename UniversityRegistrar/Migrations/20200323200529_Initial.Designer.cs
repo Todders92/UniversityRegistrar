@@ -8,7 +8,7 @@ using UniversityRegistrar.Models;
 namespace UniversityRegistrar.Migrations
 {
     [DbContext(typeof(UniversityRegistrarContext))]
-    [Migration("20200323181210_Initial")]
+    [Migration("20200323200529_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,7 +23,9 @@ namespace UniversityRegistrar.Migrations
                     b.Property<int>("CourseId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("CourseName");
+
+                    b.Property<string>("CourseNumber");
 
                     b.HasKey("CourseId");
 
@@ -52,6 +54,8 @@ namespace UniversityRegistrar.Migrations
                 {
                     b.Property<int>("StudentId")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("DateOfEnrollment");
 
                     b.Property<string>("Name");
 

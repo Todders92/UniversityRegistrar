@@ -8,7 +8,10 @@
 {
     @Html.HiddenFor(model => model.CourseId)
     @Html.LabelFor(model => model.CourseName)
-    @Html.EditorFor(model => model.CourseName)
-    <input type="submit" value="Save" />
+    @Html.EditorFor(model => model.CourseName)<br>
+    @Html.LabelFor(model => model.CourseNumber)
+    @Html.EditorFor(model => model.CourseNumber)<br>
+    <input class="btn" type="submit" value="Save changes" />
 }
 <p>@Html.ActionLink("Back to categories", "Index")</p>
+<p>@Html.ActionLink("Back to homepage", "Index", "Home")</p>

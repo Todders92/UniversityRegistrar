@@ -7,18 +7,19 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace UniversityRegistrar.Controllers
 {
-  public class ItemsController : Controller
+  public class StudentsController : Controller
   {
     private readonly UniversityRegistrarContext _db;
 
-    public ItemsController(UniversityRegistrarContext db)
+    public StudentsController(UniversityRegistrarContext db)
     {
       _db = db;
     }
 
     public ActionResult Index()
     {
-     return View(_db.Students.ToList());
+      List<Student> model = _db.Students.ToList();
+      return View(model);
     }
 
     public ActionResult Create()
@@ -67,15 +68,15 @@ namespace UniversityRegistrar.Controllers
       return RedirectToAction("Index");
     }
 
-    public ActionResult AddCategory(int id)
+    public ActionResult AddCourse(int id)
     {
       var thisStudent = _db.Students.FirstOrDefault(students => students.StudentId == id);
-      ViewBag.CourseId = new SelectList(_db.Courses, "CourseId", "Name");
+      ViewBag.CourseId = new SelectList(_db.Courses, "CourseId", "CourseName");
       return View(thisStudent);
     }
 
     [HttpPost]
-    public ActionResult AddCategory(Student student, int CourseId)
+    public ActionResult AddCourse(Student student, int CourseId)
     {
       if (CourseId != 0)
       {
@@ -100,7 +101,7 @@ namespace UniversityRegistrar.Controllers
     }
 
     [HttpPost]
-    public ActionResult DeleteCategory(int joinId)
+    public ActionResult DeleteCourse(int joinId)
     {
       var joinEntry = _db.CourseStudent.FirstOrDefault(entry => entry.CourseStudentId == joinId);
       _db.CourseStudent.Remove(joinEntry);

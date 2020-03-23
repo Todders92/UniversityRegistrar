@@ -14,16 +14,17 @@
 }
 else
 {
-  <h4>Courses @Model.Name belongs to:</h4>
   <p>Date of enrollment: @Model.DateOfEnrollment</p>
+  <h4>@Model.Name's Courses</h4>
   <ul>
   @foreach(var join in Model.Courses)
   {
-    <li>@join.Course.CourseName @join.Course.CourseNumber</li>
+    <h4>@join.Course.CourseName ~ @join.Course.CourseNumber</h4>
   }
   </ul>
 }
-
+<p>@Html.ActionLink("Add a course", "AddCourse", new { id = Model.StudentId })</p>
 <p>@Html.ActionLink("Back to list", "Index")</p>
 <p>@Html.ActionLink("Edit student", "Edit", new { id = Model.StudentId })</p>
 <p>@Html.ActionLink("Delete student", "Delete", new { id = Model.StudentId })</p>
+<p>@Html.ActionLink("Back to homepage", "Index", "Home")</p>

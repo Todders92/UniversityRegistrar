@@ -12,6 +12,7 @@
     @Html.EditorFor(model => model.Name)
     @Html.LabelFor(model => model.DateOfEnrollment)
     @Html.EditorFor(model => model.DateOfEnrollment)
-    <input type="submit" value="Save" />
+    <input class="btn" type="submit" value="Save" />
 }
 <p>@Html.ActionLink("Back to student list", "Index")</p>
+<p>@Html.ActionLink("Back to homepage", "Index", "Home")</p>

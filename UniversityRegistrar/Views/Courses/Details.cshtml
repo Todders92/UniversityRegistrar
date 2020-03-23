@@ -6,18 +6,23 @@
 
 <h2>Course Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.CourseName): @Html.DisplayFor(model => model.CourseName)</h3>
+<h3>Course Name: @Html.DisplayFor(model => model.CourseName)</h3>
+<h3>Course Number: @Html.DisplayFor(model => model.CourseNumber)</h3>
 <ul>
 @if (@Model.Students.Count == 0)
 {
   <p>no Students found</p>
 }
+else
+{
+  <h3>Students Enrolled:</h3>
+}
 @foreach (var join in Model.Students)
 {
-  <li>Name: @join.Student.Name</li>
-
+  <h4>@join.Student.Name</h4>
 }
 </ul>
 <p>@Html.ActionLink("Back to courses", "Index")</p>
 <p>@Html.ActionLink("Edit Course", "Edit", new { id = Model.CourseId })</p>
 <p>@Html.ActionLink("Delete Course", "Delete", new { id = Model.CourseId })</p>
+<p>@Html.ActionLink("Back to homepage", "Index", "Home")</p>

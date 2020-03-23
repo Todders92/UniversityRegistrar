@@ -13,7 +13,8 @@ namespace UniversityRegistrar.Migrations
                 {
                     CourseId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true)
+                    CourseName = table.Column<string>(nullable: true),
+                    CourseNumber = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -26,7 +27,8 @@ namespace UniversityRegistrar.Migrations
                 {
                     StudentId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: true),
+                    DateOfEnrollment = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
