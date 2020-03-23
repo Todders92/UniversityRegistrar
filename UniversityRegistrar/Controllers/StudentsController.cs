@@ -23,7 +23,7 @@ namespace UniversityRegistrar.Controllers
 
     //     public ActionResult Create()
     //     {
-    //       ViewBag.CourseId = new SelectList(_db.Categories, "CourseId", "Name");
+    //       ViewBag.CourseId = new SelectList(_db.Courses, "CourseId", "Name");
     //       return View();
     //     }
 
@@ -46,30 +46,30 @@ namespace UniversityRegistrar.Controllers
 
     //     public ActionResult Edit(int id)
     //     {
-    //       var thisItem = _db.Students.FirstOrDefault(students => students.ItemId == id);
-    //       ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
-    //       return View(thisItem);
+    //       var thisStudent = _db.Students.FirstOrDefault(students => students.StudentId == id);
+    //       ViewBag.CourseId = new SelectList(_db.Courses, "CourseId", "Name");
+    //       return View(thisStudent);
     //     }
 
     //     [HttpPost]
-    //     public ActionResult Edit(Item item)
+    //     public ActionResult Edit(Student student)
     //     {
-    //       _db.Entry(item).State = EntityState.Modified;
+    //       _db.Entry(student).State = EntityState.Modified;
     //       _db.SaveChanges();
     //       return RedirectToAction("Index");
     //     }
 
     //     public ActionResult Delete(int id)
     //     {
-    //       var thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id);
-    //       return View(thisItem);
+    //       var thisStudent = _db.Students.FirstOrDefault(students => students.StudentId == id);
+    //       return View(thisStudent);
     //     }
 
     //     [HttpPost, ActionName("Delete")]
     //     public ActionResult DeleteConfirmed(int id)
     //     {
-    //       var thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id);
-    //       _db.Items.Remove(thisItem);
+    //       var thisStudent = _db.Students.FirstOrDefault(students => students.StudentId == id);
+    //       _db.Students.Remove(thisStudent);
     //       _db.SaveChanges();
     //       return RedirectToAction("Index");
     //     }
