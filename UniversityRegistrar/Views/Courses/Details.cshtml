@@ -1,4 +1,3 @@
-@*
 @{
   Layout = "_Layout";
 }
@@ -6,7 +5,7 @@
 @model UniversityRegistrar.Models.Course;
 <h2>Course Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<h3>@Html.DisplayNameFor(model => model.CourseName): @Html.DisplayFor(model => model.CourseName)</h3>
 <ul>
 @if (@Model.Students.Count == 0)
 {
@@ -17,7 +16,6 @@
   <li>Name: @student.Name</li>
 }
 </ul>
-<p>@Html.ActionLink("Back to categories", "Index")</p>
+<p>@Html.ActionLink("Back to courses", "Index")</p>
 <p>@Html.ActionLink("Edit Course", "Edit", new { id = Model.CourseId })</p>
 <p>@Html.ActionLink("Delete Course", "Delete", new { id = Model.CourseId })</p>
-*@
