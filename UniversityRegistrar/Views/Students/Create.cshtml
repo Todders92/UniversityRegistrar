@@ -8,8 +8,8 @@
 {
     @Html.LabelFor(model => model.Name)
     @Html.TextBoxFor(model => model.Name)
-    @Html.LabelFor(model => model.Course)
-    @Html.DropDownList("CourseId")
+    @Html.LabelFor(model => model.DateOfEnrollment)
+    @Html.TextBoxFor(model => model.DateOfEnrollment)
     <input type="submit" value="Add new student" class="btn btn-default" />
 }
 <p>@Html.ActionLink("Show all students", "Index")</p>

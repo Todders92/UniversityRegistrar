@@ -1,8 +1,9 @@
 @{
   Layout = "_Layout";
 }
-@using UniversityRegistrar.Models;
+
 @model UniversityRegistrar.Models.Course;
+
 <h2>Course Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.CourseName): @Html.DisplayFor(model => model.CourseName)</h3>
@@ -11,9 +12,10 @@
 {
   <p>no Students found</p>
 }
-@foreach (Student student in @Model.Students)
+@foreach (var join in Model.Students)
 {
-  <li>Name: @student.Name</li>
+  <li>Name: @join.Student.Name</li>
+
 }
 </ul>
 <p>@Html.ActionLink("Back to courses", "Index")</p>
