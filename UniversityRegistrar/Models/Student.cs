@@ -11,6 +11,7 @@ namespace UniversityRegistrar.Models
 
         public int StudentId { get; set; }
         public string Name { get; set; }
+        public string DateOfEnrollment { get; set; }
         
         public ICollection<CourseStudent> Courses { get;}
     }
